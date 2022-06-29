@@ -30,7 +30,7 @@
 		</tr>
 	</table>
 	
-	<h3>${trainer.firstName}'s workouts</h3>
+	<h3>${trainer.firstName}'s Workouts</h3>
 	<table>
 		<c:forEach var="workout" items="${trainer.workouts}">
 			<tr>
