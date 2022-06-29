@@ -19,7 +19,7 @@ import com.codingdojo.movement.services.TrainerService;
 import com.codingdojo.movement.services.UserService;
 import com.codingdojo.movement.services.WorkoutService;
 
-
+//joel sucks
 @Controller
 @RequestMapping("/user")
 public class UserController
