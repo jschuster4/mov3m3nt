@@ -23,7 +23,7 @@ import com.codingdojo.movement.services.WorkoutService;
 @RequestMapping("/workout")
 public class WorkoutController {
     
-//    public WorkoutController(){};
+    public WorkoutController(){};
 
     @Autowired
     private WorkoutService workoutService;
@@ -110,6 +110,14 @@ public class WorkoutController {
         model.addAttribute("workout", workoutService.findById(id));
         return "showOneWorkout";
     }
+
+	public TrainerService getTrainerService() {
+		return trainerService;
+	}
+
+	public void setTrainerService(TrainerService trainerService) {
+		this.trainerService = trainerService;
+	}
     
     
 }
