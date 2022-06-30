@@ -10,5 +10,5 @@ onregister = (event) => {
         .then(res => res.json(res))
         .then(res => console.log(res))
         .catch(e => console.log(e))
-
 }
+

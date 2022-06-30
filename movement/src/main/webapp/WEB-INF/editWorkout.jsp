@@ -43,7 +43,8 @@
         
         </form:form>
     </div>
-        <a href="*******Insert path to logout user and redirect to login page ***********">Logout</a>
+        <a href="/trainer/home/${sessionTrainer.id}">Back to your Trainer page</a>
+       
 
 </body>
 </html>

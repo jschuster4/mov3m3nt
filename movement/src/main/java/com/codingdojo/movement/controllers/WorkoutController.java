@@ -1,5 +1,7 @@
 package com.codingdojo.movement.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -15,21 +17,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.codingdojo.movement.models.Trainer;
+import com.codingdojo.movement.models.User;
 import com.codingdojo.movement.models.Workout;
 import com.codingdojo.movement.services.TrainerService;
+import com.codingdojo.movement.services.UserService;
 import com.codingdojo.movement.services.WorkoutService;
 
 @Controller
 @RequestMapping("/workout")
 public class WorkoutController {
     
-//    public WorkoutController(){};
+    public WorkoutController(){};
 
     @Autowired
     private WorkoutService workoutService;
     
     @Autowired 
     private TrainerService trainerService;
+    
+    @Autowired 
+    private UserService userService;
     
 //    add a new workout page 
 
@@ -45,13 +52,15 @@ public class WorkoutController {
     @PostMapping("/new/{trainer_id}")
     public String addWorkout(@PathVariable("trainer_id") Long trainer_id,@Valid @ModelAttribute("addWorkout") Workout workout, BindingResult res, Model model, HttpSession session){
         if (res.hasErrors()){
-            model.addAttribute("addWorkout", new Workout());
             return "newWorkout";
+        }
+        if (SpotifyController.getPlaylist(workout.getPlaylistId()) == null) {
+        	res.rejectValue("playlistId","Playlist_error","Playlist NOT FOUND");
+        	return "newWorkout";
         }
         workoutService.create(workout);
         String returnStatement = String.format("redirect:/trainer/home/%s", trainer_id);
         return returnStatement; 
-//        if I redirect this^^^^ to something else, it works. 
     }
     
     
@@ -64,6 +73,21 @@ public class WorkoutController {
         }
         model.addAttribute("workout", workoutService.findAll() );
         return "showAllWorkouts";
+    }
+    
+    @GetMapping("/likeWorkout/{id}")
+    public String likeWorkout(@PathVariable("id") Long id, Model model, HttpSession session) {
+    	Workout workout = workoutService.findById(id);
+    	User user = (User) session.getAttribute("user");
+    	List <User> UserList = workout.getUsers();
+    	List <Workout> WorkoutList = user.getWorkouts();
+    	UserList.add(user);
+    	WorkoutList.add(workout);
+    	user.setWorkouts(WorkoutList);
+    	workout.setUsers(UserList);
+    	workoutService.updateWorkout(workout);
+    	userService.updateUser(user);
+    	return "redirect:/workout/showAll";
     }
 
     @GetMapping("/edit/{id}")
@@ -107,9 +131,19 @@ public class WorkoutController {
 
     @GetMapping("/{id}")
     public String showOneWorkout(@PathVariable("id") Long id, Model model, HttpSession session){
-        model.addAttribute("workout", workoutService.findById(id));
+    	Workout workout = workoutService.findById(id);
+        model.addAttribute("workout", workout);
+        model.addAttribute("playlist", SpotifyController.getPlaylist(workout.getPlaylistId()));
         return "showOneWorkout";
     }
+
+	public TrainerService getTrainerService() {
+		return trainerService;
+	}
+
+	public void setTrainerService(TrainerService trainerService) {
+		this.trainerService = trainerService;
+	}
     
     
 }

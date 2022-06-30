@@ -28,12 +28,15 @@ public class Workout {
 
     @NotEmpty(message= "A selection from the dropdown is required!")
     private String difficulty;
+    
+    @NotEmpty(message= "Playlist is required")
+    private String playlistId;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="trainer_id")
     private Trainer trainer;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "users_workouts", 
         joinColumns = @JoinColumn(name = "workout_id"), 
@@ -45,7 +48,19 @@ public class Workout {
         return id;
     }
 
-    public void setId(Long id) {
+    
+   
+   
+    
+    public String getPlaylistId() {
+		return playlistId;
+	}
+
+	public void setPlaylistId(String playlistId) {
+		this.playlistId = playlistId;
+	}
+
+	public void setId(Long id) {
         this.id = id;
     }
 
@@ -104,5 +119,13 @@ public class Workout {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+    
+    public int getUserLikes() {
+    	int num=0;
+    	num=users.size();
+    	return num;
+    }
+    
+    
 }
 

@@ -2,13 +2,13 @@
 
 *
 {
-    border:0;
-    margin:0;
-    padding:0;
-    outline:0;
-    box-sizing:border-box;
-    font-family:"Roboto";
-    color:#34495e;
+	border:0;
+	margin:0;
+	padding:0;
+	outline:0;
+	box-sizing:border-box;
+	font-family:"Roboto";
+	color:rgb(0, 0, 0);
 }
 
 .grid{display:grid;}
@@ -136,6 +136,20 @@ th
 
 td
 {
+
     padding:1rem;
     border:1px solid #e4e2e0;
+
+	padding:1rem;
+	border:1px solid #e4e2e0;
+}
+
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }

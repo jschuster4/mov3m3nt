@@ -19,7 +19,7 @@ import com.codingdojo.movement.services.TrainerService;
 import com.codingdojo.movement.services.UserService;
 import com.codingdojo.movement.services.WorkoutService;
 
-//joel sucks
+
 @Controller
 @RequestMapping("/user")
 public class UserController
@@ -83,10 +83,8 @@ public class UserController
 		if(session.getAttribute("user")==null) {
 			return "redirect:/user";
 		}
-//		User currentUser = (User) session.getAttribute("user");
-//		model.addAttribute("currentUser", currentUser );
-//		Will implement this with the likes section
-		model.addAttribute("workout", workoutService.findAll());
+		User currentUser = (User) session.getAttribute("user");
+		model.addAttribute("currentUser", currentUser );
 		return "userHome";
 	}
 	
