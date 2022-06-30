@@ -15,7 +15,7 @@
         <h1>MOV3M3NT</h1>
         <a href="/user/logout">Logout</a>
     </div>
-    <h2>Welcome ${user.firstName} ${user.lastName}</h2>
+    <h2>Welcome ${currentUser.firstName} ${currentUser.lastName}</h2>
     <div>
         <h3>Here are the workouts that you love:</h3>
         <table>
@@ -25,13 +25,13 @@
                 <th>Instructor</th>
                 <th>Workout Likes</th>
             </tr>
-            <c:forEach var="workout" items="${workout}">
+            <c:forEach var="workout" items="${currentUser.getWorkouts()}">
                <tr>
                     <td><a href="/workout/${workout.id}">${workout.title}</a></td>
                     <td>${workout.target}</td>
-                    <td><a href="/user/viewInstructor/${workout.trainer.id}">${workout.trainer.firstName}</a></td>
-<%--                     <td>${workout.likes}</td>
- --%>                </tr>
+                    <td><a href="/user/viewInstructor/${workout.getTrainer().getId()}">${workout.getTrainer().getFirstName()}</a></td>
+                    <td>${workout.getUsers().size()}</td> 
+                </tr>
             </c:forEach>
         </table>
     </div>

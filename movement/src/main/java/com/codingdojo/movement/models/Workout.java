@@ -32,7 +32,7 @@ public class Workout {
     @NotEmpty(message= "Playlist is required")
     private String playlistId;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="trainer_id")
     private Trainer trainer;
 
