@@ -45,13 +45,11 @@ public class WorkoutController {
     @PostMapping("/new/{trainer_id}")
     public String addWorkout(@PathVariable("trainer_id") Long trainer_id,@Valid @ModelAttribute("addWorkout") Workout workout, BindingResult res, Model model, HttpSession session){
         if (res.hasErrors()){
-            model.addAttribute("addWorkout", new Workout());
             return "newWorkout";
         }
         workoutService.create(workout);
         String returnStatement = String.format("redirect:/trainer/home/%s", trainer_id);
         return returnStatement; 
-//        if I redirect this^^^^ to something else, it works. 
     }
     
     
