@@ -17,11 +17,16 @@
 <video autoplay muted loop id="myVideo">
 		<source src="/videos/explore.mp4" type="video/mp4">
 </video>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2a23626e8e4b806f284bb7239c974fbba0152f03
 
 	<div class="container mt-5">
-		<h1>Welcome!</h1>
-		<p>Join our growing community.</p>
+		<h1>Welcome to the MOV3M3NT!</h1>
+		<p>Quality Training Meets Quality Outcomes</p>
+		
+		
 		<h3>Log In User</h3>
 		<form:form action="/user/login" method="post" modelAttribute="userLogin">
 
@@ -58,12 +63,12 @@
 				<form:errors path="email" class="text-danger" />
 			</div>
 			<div class="form-group">
-				<label>Password:</label>
+				<form:label path="password">Password:</form:label>
 				<form:password path="password" class="form-control" />
 				<form:errors path="password" class="text-danger" />
 			</div>
 			<div class="form-group">
-				<label>Confirm Password:</label>
+				<form:label path="confirm">Confirm Password:</form:label>
 				<form:password path="confirm" class="form-control" />
 				<form:errors path="confirm" class="text-danger" />
 			</div>

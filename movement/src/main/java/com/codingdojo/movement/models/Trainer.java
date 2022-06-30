@@ -62,13 +62,11 @@ public class Trainer {
     @Max(99)
     private int experience; 
 
-    // ADD IMAGE STUFF HERE******************************
-    // @NotNull(message="Please supply a valid image")
-    // private String avatar;
-
     @OneToMany(mappedBy="trainer", fetch = FetchType.LAZY)
 	private List<Workout> workouts;
 
+	//@NotNull(message = "please supply a valid image")
+	private String avatar;
 
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -174,7 +172,15 @@ public class Trainer {
 		this.updatedAt = updatedAt;
 	};
 
-    // ************* generate setters and getters *************
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+
+	// ************* generate setters and getters *************
 
 }
 

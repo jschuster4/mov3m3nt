@@ -10,18 +10,101 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script defer type="text/javascript" src="/js/main.js"></script>
     <title>Login And Registration</title>
+<%--    <script type="text/javascript" src="/js/main.js"></script>--%>
 </head>
 <body>
+<video autoplay muted loop id="myVideo">
+		<source src="/videos/explore.mp4" type="video/mp4">
+</video>
 
+<<<<<<< HEAD
 <video autoplay muted loop id="myVideo">
 		<source src="/videos/ropes.mp4.mp4" type="video/mp4">
 </video>
+=======
+<h1>MOV3M3NT</h1>
+<p>Join our growing community.</p>
+
+
+<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">
+
+    <table>
+        <thead>
+        <tr>
+            <td colspan="2">Log In Trainer</td>
+        </tr>
+        </thead>
+        <thead>
+        <tr>
+            <td class="float-left">Email:</td>
+            <td class="float-left">
+                <form:errors path="email" class="text-danger"/>
+                <form:input class="input" path="email"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="float-left">Password:</td>
+            <td class="float-left">
+                <form:errors path="password" class="text-danger"/>
+                <form:input class="input" path="password"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=2><input class="input" class="button" type="submit" value="Login Trainer"/></td>
+        </tr>
+        </thead>
+    </table>
+</form:form>
+
+
+<form:form action="/trainer/register" method="post" modelAttribute="newTrainer" enctype="multipart/form-data">
+
+    <table>
+        <thead>
+        <tr>
+            <td colspan="2">Register as a Trainer</td>
+        </tr>
+        </thead>
+        <thead>
+        <tr>
+            <td>
+
+               <input id="avatar" type="file" name="file">
+                <form:errors path="avatar"></form:errors>
+            </td>
+        </tr>
+        <tr>
+            <td class="float-left">First Name</td>
+            <td class="float-left">
+                <form:errors path="firstName" class="text-danger"/>
+                <form:input type="text" class="input" path="FirstName"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="float-left">Last Name:</td>
+            <td class="float-left">
+                <form:errors path="lastName" class="text-danger"/>
+                <form:input type="text" class="input" path="lastName"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="float-left">Email:</td>
+            <td class="float-left">
+                <form:errors path="email" class="text-danger"/>
+                <form:input type="text" class="input" path="email"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="float-left">Location:</td>
+            <td class="float-left">
+>>>>>>> 2a23626e8e4b806f284bb7239c974fbba0152f03
 
 <section class="vh-100 gradient-custom">
 	<div class="container mt-5">
 		<h1>MOV3M3NT</h1>
-		<p>Join our growing community.</p>
+		<p>Join our growing community of Trainers</p>
 		<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">
 		
     		<h3>Log In Trainer</h3>
@@ -62,39 +145,42 @@
 			</div>
 			<br>
         	<div class="form-group">	
-            	<label>Location:</label>
+            	<form:label path="location">Location:</form:label>
+
                 <form:errors path="location" class="text-danger"/>
-                <form:input type="text" class="input" path="location"/>
+                <form:input type="text" class="form-control" path="location"/>
             </div>	
             <br>
         	<div class="form-group">	
-            	<label>Age:</label>
+            	<form:label path="age">Age:</form:label>
                 <form:errors path="age" class="text-danger"/>
-                <form:input type="number" class="input" path="age"/>
+                <form:input type="number" class="form-control" path="age"/>
             </div>
             <br>
         	<div class="form-group">	
-            	<label>Years of Experience:</label>
+            	<form:label path="experience">Years of Experience:</form:label>
                 <form:errors path="experience" class="text-danger"/>
-                <form:input type="number" class="input" path="experience"/>
+                <form:input type="number" class="form-control" path="experience"/>
             </div>
             <br>
             <div class="form-group">
-				<label>Password:</label>
+				<form:label path="password">Password:</form:label>
 				<form:password path="password" class="form-control" />
 				<form:errors path="password" class="text-danger" />
 			</div>
 			<br>
 			<div class="form-group">
-				<label>Confirm Password:</label>
+				<form:label path="confirm">Confirm Password:</form:label>
 				<form:password path="confirm" class="form-control" />
 				<form:errors path="confirm" class="text-danger" />
 			</div>
 			<br>
             <input class="btn btn-primary" type="submit" value="Submit New Trainer"/>
 	</form:form>
+	<a href="/user"> Not a trainer? Click here</a>
 	</div>
 </section>
+
 
 
 </body>
