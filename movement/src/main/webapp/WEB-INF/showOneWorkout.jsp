@@ -23,6 +23,7 @@
         <h3>Difficulty Level: ${workout.difficulty}</h3>
         <h3>Here is the workout:</h3>
         <p>${workout.details}</p>
+        <h3>Workout PlayList: ${playlist}</h3>
     </div>
     
    	<c:set var="trainerID" value="${workout.trainer.id}"/>
