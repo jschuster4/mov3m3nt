@@ -13,7 +13,9 @@
     <title>Login And Registration</title>
 </head>
 <body>
-
+<video autoplay muted loop id="myVideo">
+		<source src="/videos/explore.mp4" type="video/mp4">
+</video>
 
 <section class="vh-100 gradient-custom">
 	<div class="container mt-5">
@@ -59,31 +61,31 @@
 			</div>
 			<br>
         	<div class="form-group">	
-            	<label>Location:</label>
+            	<form:label path="location">Location:</form:label>
                 <form:errors path="location" class="text-danger"/>
-                <form:input type="text" class="input" path="location"/>
+                <form:input type="text" class="form-control" path="location"/>
             </div>	
             <br>
         	<div class="form-group">	
-            	<label>Age:</label>
+            	<form:label path="age">Age:</form:label>
                 <form:errors path="age" class="text-danger"/>
-                <form:input type="number" class="input" path="age"/>
+                <form:input type="number" class="form-control" path="age"/>
             </div>
             <br>
         	<div class="form-group">	
-            	<label>Years of Experience:</label>
+            	<form:label path="experience">Years of Experience:</form:label>
                 <form:errors path="experience" class="text-danger"/>
-                <form:input type="number" class="input" path="experience"/>
+                <form:input type="number" class="form-control" path="experience"/>
             </div>
             <br>
             <div class="form-group">
-				<label>Password:</label>
+				<form:label path="password">Password:</form:label>
 				<form:password path="password" class="form-control" />
 				<form:errors path="password" class="text-danger" />
 			</div>
 			<br>
 			<div class="form-group">
-				<label>Confirm Password:</label>
+				<form:label path="confirm">Confirm Password:</form:label>
 				<form:password path="confirm" class="form-control" />
 				<form:errors path="confirm" class="text-danger" />
 			</div>

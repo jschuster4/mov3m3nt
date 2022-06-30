@@ -59,12 +59,12 @@
 				<form:errors path="email" class="text-danger" />
 			</div>
 			<div class="form-group">
-				<label>Password:</label>
+				<form:label path="password">Password:</form:label>
 				<form:password path="password" class="form-control" />
 				<form:errors path="password" class="text-danger" />
 			</div>
 			<div class="form-group">
-				<label>Confirm Password:</label>
+				<form:label path="confirm">Confirm Password:</form:label>
 				<form:password path="confirm" class="form-control" />
 				<form:errors path="confirm" class="text-danger" />
 			</div>
