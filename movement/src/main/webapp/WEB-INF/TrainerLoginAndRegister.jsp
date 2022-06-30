@@ -19,154 +19,159 @@
 		<source src="/videos/explore.mp4" type="video/mp4">
 </video>
 
-<h1>MOV3M3NT</h1>
-<p>Join our growing community.</p>
+<%--<h1>MOV3M3NT</h1>--%>
+<%--<p>Join our growing community.</p>--%>
 
 
-<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">
+<%--<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">--%>
 
-    <table>
-        <thead>
-        <tr>
-            <td colspan="2">Log In Trainer</td>
-        </tr>
-        </thead>
-        <thead>
-        <tr>
-            <td class="float-left">Email:</td>
-            <td class="float-left">
-                <form:errors path="email" class="text-danger"/>
-                <form:input class="input" path="email"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Password:</td>
-            <td class="float-left">
-                <form:errors path="password" class="text-danger"/>
-                <form:input class="input" path="password"/>
-            </td>
-        </tr>
-        <tr>
-            <td colspan=2><input class="input" class="button" type="submit" value="Login Trainer"/></td>
-        </tr>
-        </thead>
-    </table>
-</form:form>
+<%--    <table>--%>
+<%--        <thead>--%>
+<%--        <tr>--%>
+<%--            <td colspan="2">Log In Trainer</td>--%>
+<%--        </tr>--%>
+<%--        </thead>--%>
+<%--        <thead>--%>
+<%--        <tr>--%>
+<%--            <td class="float-left">Email:</td>--%>
+<%--            <td class="float-left">--%>
+<%--                <form:errors path="email" class="text-danger"></form:errors>--%>
+<%--                <form:input class="input" path="email"></form:input>--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td class="float-left">Password:</td>--%>
+<%--            <td class="float-left">--%>
+<%--                <form:errors path="password" class="text-danger"></form:errors>--%>
+<%--                <form:input class="input" path="password"></form:input>--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td colspan=2><input class="input" class="button" type="submit" value="Login Trainer"/></td>--%>
+<%--        </tr>--%>
+<%--        </thead>--%>
+<%--    </table>--%>
+<%--</form:form>--%>
 
 
-<form:form action="/trainer/register" method="post" modelAttribute="newTrainer" enctype="multipart/form-data">
+<%--<form:form action="/trainer/register" method="post" modelAttribute="newTrainer" enctype="multipart/form-data">--%>
 
-    <table>
-        <thead>
-        <tr>
-            <td colspan="2">Register as a Trainer</td>
-        </tr>
-        </thead>
-        <thead>
-        <tr>
-            <td>
+<%--    <table>--%>
+<%--        <thead>--%>
+<%--        <tr>--%>
+<%--            <td colspan="2">Register as a Trainer</td>--%>
+<%--        </tr>--%>
+<%--        </thead>--%>
+<%--        <thead>--%>
+<%--        <tr>--%>
+<%--            <td>--%>
 
-               <input id="avatar" type="file" name="file">
-                <form:errors path="avatar"></form:errors>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">First Name</td>
-            <td class="float-left">
-                <form:errors path="firstName" class="text-danger"/>
-                <form:input type="text" class="input" path="FirstName"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Last Name:</td>
-            <td class="float-left">
-                <form:errors path="lastName" class="text-danger"/>
-                <form:input type="text" class="input" path="lastName"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Email:</td>
-            <td class="float-left">
-                <form:errors path="email" class="text-danger"/>
-                <form:input type="text" class="input" path="email"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Location:</td>
-            <td class="float-left">
+<%--               <input id="avatar" type="file" name="file">--%>
+<%--                <form:errors path="avatar"></form:errors>--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td class="float-left">First Name</td>--%>
+<%--            <td class="float-left">--%>
+<%--                <form:errors path="firstName" class="text-danger"></form:errors>--%>
+<%--                <form:input type="text" class="input" path="FirstName"></form:input>--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td class="float-left">Last Name:</td>--%>
+<%--            <td class="float-left">--%>
+<%--                <form:errors path="lastName" class="text-danger"></form:errors>--%>
+<%--                <form:input type="text" class="input" path="lastName"></form:input>--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td class="float-left">Email:</td>--%>
+<%--            <td class="float-left">--%>
+<%--                <form:errors path="email" class="text-danger"></form:errors>--%>
+<%--                <form:input type="text" class="input" path="email"></form:input>--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <tr>--%>
+<%--            <td class="float-left">Location:</td>--%>
+<%--            <td class="float-left">--%>
 
 <section class="vh-100 gradient-custom">
 	<div class="container mt-5">
 		<h1>MOV3M3NT</h1>
 		<p>Join our growing community of Trainers</p>
-		<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">
-		
+		<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin" >
+
     		<h3>Log In Trainer</h3>
         		<div class="form-group">
 					<form:label path="email">Email:</form:label>
-					<form:input path="email" class="form-control" />
-					<form:errors path="email" class="text-danger" />
+					<form:input path="email" class="form-control" ></form:input>
+					<form:errors path="email" class="text-danger" ></form:errors>
 				</div>
 				<br>
 				<div class="form-group">
 					<label>Password:</label>
-					<form:password path="password" class="form-control" />
-					<form:errors path="password" class="text-danger" />
+					<form:password path="password" class="form-control" ></form:password>
+					<form:errors path="password" class="text-danger" ></form:errors>
 				</div>
 				<br>
             	<input class="input" class="button" type="submit" value="Login Trainer"/>
 	</form:form>
 	
-	<form:form action="/trainer/register" method="post" modelAttribute="newTrainer">
+	<form:form action="/trainer/register" method="post" modelAttribute="newTrainer" enctype="multipart/form-data">
 	<br>
 		<h3>Register as a Trainer</h3>
     	<div class="form-group">
 				<form:label path="firstName">First Name:</form:label>
-				<form:input path="firstName" class="form-control" />
-				<form:errors path="firstName" class="text-danger" />
+				<form:input path="firstName" class="form-control" ></form:input>
+				<form:errors path="firstName" class="text-danger" ></form:errors>
 			</div>
 			<br>
+            <div>
+                <input id="avatar" type="file" name="file">
+                <form:errors path="avatar"></form:errors>
+            </div>
+            <br>
 			<div class="form-group">
 				<form:label path="lastName">Last Name:</form:label>
-				<form:input path="lastName" class="form-control" />
-				<form:errors path="lastName" class="text-danger" />
+				<form:input path="lastName" class="form-control" ></form:input>
+				<form:errors path="lastName" class="text-danger" ></form:errors>
 			</div>
 			<br>
 			<div class="form-group">
 				<form:label path="email">Email:</form:label>
-				<form:input path="email" class="form-control" />
-				<form:errors path="email" class="text-danger" />
+				<form:input path="email" class="form-control" ></form:input>
+				<form:errors path="email" class="text-danger" ></form:errors>
 			</div>
 			<br>
         	<div class="form-group">	
             	<form:label path="location">Location:</form:label>
 
-                <form:errors path="location" class="text-danger"/>
-                <form:input type="text" class="form-control" path="location"/>
+                <form:errors path="location" class="text-danger"></form:errors>
+                <form:input type="text" class="form-control" path="location"></form:input>
             </div>	
             <br>
         	<div class="form-group">	
             	<form:label path="age">Age:</form:label>
-                <form:errors path="age" class="text-danger"/>
-                <form:input type="number" class="form-control" path="age"/>
+                <form:errors path="age" class="text-danger"></form:errors>
+                <form:input type="number" class="form-control" path="age"></form:input>
             </div>
             <br>
         	<div class="form-group">	
             	<form:label path="experience">Years of Experience:</form:label>
-                <form:errors path="experience" class="text-danger"/>
-                <form:input type="number" class="form-control" path="experience"/>
+                <form:errors path="experience" class="text-danger"></form:errors>
+                <form:input type="number" class="form-control" path="experience"></form:input>
             </div>
             <br>
             <div class="form-group">
 				<form:label path="password">Password:</form:label>
-				<form:password path="password" class="form-control" />
-				<form:errors path="password" class="text-danger" />
+				<form:password path="password" class="form-control"></form:password>
+				<form:errors path="password" class="text-danger"></form:errors>
 			</div>
 			<br>
 			<div class="form-group">
 				<form:label path="confirm">Confirm Password:</form:label>
-				<form:password path="confirm" class="form-control" />
-				<form:errors path="confirm" class="text-danger" />
+				<form:password path="confirm" class="form-control"></form:password>
+				<form:errors path="confirm" class="text-danger"></form:errors>
 			</div>
 			<br>
             <input class="input" class="button" type="submit" value="Submit New Trainer"/>
