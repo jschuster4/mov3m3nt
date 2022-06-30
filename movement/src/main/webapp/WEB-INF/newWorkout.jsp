@@ -42,7 +42,6 @@
         
         </form:form>
     </div>
-        <a href="/trainer/logout">Logout</a>
         <a href="/trainer/home/${sessionTrainer.id}">Back to your Trainer page</a>
 
 </body>

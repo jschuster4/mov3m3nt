@@ -10,6 +10,7 @@
     <title></title>
 </head>
 <body>
+
     <div>
         <h1>MOV3M3NT</h1>
         <a href="/workout/likeWorkout/${workout.id}">Like</a>
@@ -23,7 +24,21 @@
         <h3>Here is the workout:</h3>
         <p>${workout.details}</p>
     </div>
-    <a href="/user/home">Back to Your Workouts</a>
-
+    
+   	<c:set var="trainerID" value="${workout.trainer.id}"/>
+	<c:set var="sessionTrainerID" value="${sessionTrainer.id}"/>
+   	<c:if test= "${trainerID == sessionTrainerID}">
+		<a href="/trainer/home/${sessionTrainer.id}">Back to Your Workouts (Trainer)</a>
+		
+	</c:if>
+	
+	<c:set var="sessionUserID" value="${user.id}"/>
+   	<c:if test= "${sessionUserID != null}">
+		<a href="/user/home">Back to Your Workouts (User)</a>
+		
+	</c:if>
+   	
+<!--     <a href="/user/home">Back to Your Workouts</a>
+ -->
 </body>
 </html>

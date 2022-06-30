@@ -13,7 +13,13 @@
     <title>Login And Registration</title>
 </head>
 <body>
-<section class="vh-100 gradient-custom">
+
+<video autoplay muted loop id="myVideo">
+		<source src="/videos/explore.mp4" type="video/mp4">
+</video>
+<h1>Welcome!</h1>
+<p>Join our growing community.</p>
+
 	<div class="container mt-5">
 		<h1>Welcome!</h1>
 		<p>Join our growing community.</p>
@@ -30,6 +36,7 @@
 				<form:password path="password" class="form-control" />
 				<form:errors path="password" class="text-danger" />
 			</div>
+
 
 			<input type="submit" value="Login" class="btn btn-primary" />
 		</form:form>
@@ -66,7 +73,7 @@
 		</form:form>
 		<a href="/trainer">Access to trainer portal here!</a>
 	</div>
-</section>
+
 
 
 </body>
