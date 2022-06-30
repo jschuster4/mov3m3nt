@@ -6,116 +6,92 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Login And Registration</title>
 </head>
 <body>
 
-<h1>MOV3M3NT</h1>
-<p>Join our growing community.</p>
 
-
-<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">
-
-    <table>
-        <thead>
-        <tr>
-            <td colspan="2">Log In Trainer</td>
-        </tr>
-        </thead>
-        <thead>
-        <tr>
-            <td class="float-left">Email:</td>
-            <td class="float-left">
-                <form:errors path="email" class="text-danger"/>
-                <form:input class="input" path="email"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Password:</td>
-            <td class="float-left">
-                <form:errors path="password" class="text-danger"/>
-                <form:input class="input" path="password"/>
-            </td>
-        </tr>
-        <tr>
-            <td colspan=2><input class="input" class="button" type="submit" value="Login Trainer"/></td>
-        </tr>
-        </thead>
-    </table>
-</form:form>
-
-<form:form action="/trainer/register" method="post" modelAttribute="newTrainer">
-
-    <table>
-        <thead>
-        <tr>
-            <td colspan="2">Register as a Trainer</td>
-        </tr>
-        </thead>
-        <thead>
-        <tr>
-            <td class="float-left">First Name</td>
-            <td class="float-left">
-                <form:errors path="firstName" class="text-danger"/>
-                <form:input type="text" class="input" path="FirstName"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Last Name:</td>
-            <td class="float-left">
-                <form:errors path="lastName" class="text-danger"/>
-                <form:input type="text" class="input" path="lastName"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Email:</td>
-            <td class="float-left">
-                <form:errors path="email" class="text-danger"/>
-                <form:input type="text" class="input" path="email"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Location:</td>
-            <td class="float-left">
+<section class="vh-100 gradient-custom">
+	<div class="container mt-5">
+		<h1>MOV3M3NT</h1>
+		<p>Join our growing community.</p>
+		<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">
+		
+    		<h3>Log In Trainer</h3>
+        		<div class="form-group">
+					<form:label path="email">Email:</form:label>
+					<form:input path="email" class="form-control" />
+					<form:errors path="email" class="text-danger" />
+				</div>
+				<br>
+				<div class="form-group">
+					<label>Password:</label>
+					<form:password path="password" class="form-control" />
+					<form:errors path="password" class="text-danger" />
+				</div>
+				<br>
+            	<input class="input" class="button" type="submit" value="Login Trainer"/>
+	</form:form>
+	
+	<form:form action="/trainer/register" method="post" modelAttribute="newTrainer">
+	<br>
+		<h3>Register as a Trainer</h3>
+    	<div class="form-group">
+				<form:label path="firstName">First Name:</form:label>
+				<form:input path="firstName" class="form-control" />
+				<form:errors path="firstName" class="text-danger" />
+			</div>
+			<br>
+			<div class="form-group">
+				<form:label path="lastName">Last Name:</form:label>
+				<form:input path="lastName" class="form-control" />
+				<form:errors path="lastName" class="text-danger" />
+			</div>
+			<br>
+			<div class="form-group">
+				<form:label path="email">Email:</form:label>
+				<form:input path="email" class="form-control" />
+				<form:errors path="email" class="text-danger" />
+			</div>
+			<br>
+        	<div class="form-group">	
+            	<label>Location:</label>
                 <form:errors path="location" class="text-danger"/>
                 <form:input type="text" class="input" path="location"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Age:</td>
-            <td class="float-left">
+            </div>	
+            <br>
+        	<div class="form-group">	
+            	<label>Age:</label>
                 <form:errors path="age" class="text-danger"/>
                 <form:input type="number" class="input" path="age"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="float-left">Years of Experience:</td>
-            <td class="float-left">
+            </div>
+            <br>
+        	<div class="form-group">	
+            	<label>Years of Experience:</label>
                 <form:errors path="experience" class="text-danger"/>
                 <form:input type="number" class="input" path="experience"/>
-            </td>
-        </tr>
-         <tr>
-            <td class="float-left">Password:</td>
-            <td class="float-left">
-                <form:errors path="password" class="text-danger"/>
-                <form:input type="text" class="input" path="password"/>
-            </td>
-        </tr>
-         <tr>
-            <td class="float-left">Confirm Password:</td>
-            <td class="float-left">
-                <form:errors path="confirm" class="text-danger"/>
-                <form:input class="input" path="confirm"/>
-            </td>
-        </tr>
-        <tr>
-            <td colspan=2><input class="input" class="button" type="submit" value="Submit New Trainer"/></td>
-        </tr>
-        </thead>
-    </table>
-</form:form>
+            </div>
+            <br>
+            <div class="form-group">
+				<label>Password:</label>
+				<form:password path="password" class="form-control" />
+				<form:errors path="password" class="text-danger" />
+			</div>
+			<br>
+			<div class="form-group">
+				<label>Confirm Password:</label>
+				<form:password path="confirm" class="form-control" />
+				<form:errors path="confirm" class="text-danger" />
+			</div>
+			<br>
+            <input class="input" class="button" type="submit" value="Submit New Trainer"/>
+	</form:form>
+	</div>
+</section>
 
 
 </body>

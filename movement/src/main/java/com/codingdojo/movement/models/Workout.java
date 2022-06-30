@@ -33,7 +33,7 @@ public class Workout {
     @JoinColumn(name="trainer_id")
     private Trainer trainer;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "users_workouts", 
         joinColumns = @JoinColumn(name = "workout_id"), 
@@ -103,6 +103,12 @@ public class Workout {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+    
+    public int getUserLikes() {
+    	int num=0;
+    	num=users.size();
+    	return num;
     }
 }
 

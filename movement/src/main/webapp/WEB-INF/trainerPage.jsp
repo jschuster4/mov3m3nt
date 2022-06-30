@@ -13,6 +13,7 @@
 
 	<h1>Trainer ${trainer.firstName} ${trainer.lastName}</h1>
 	<p>Take a look at the workouts below</p>
+	<input type="button" value="Like this Trainer" onclick="addOneLike()"/> 
 	
 	<h3>${trainer.firstName}'s Bio:</h3>
 	<table>

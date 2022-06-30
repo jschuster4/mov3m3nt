@@ -12,6 +12,7 @@
 <body>
     <div>
         <h1>MOV3M3NT</h1>
+        <a href="/workout/likeWorkout/${workout.id}">Like</a>
 		<input type="button" value="Like this Workout" onclick="addOneLike()"/> 
         
     </div>
