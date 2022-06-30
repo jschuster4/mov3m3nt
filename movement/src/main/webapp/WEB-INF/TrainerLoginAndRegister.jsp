@@ -20,7 +20,7 @@
 <section class="vh-100 gradient-custom">
 	<div class="container mt-5">
 		<h1>MOV3M3NT</h1>
-		<p>Join our growing community.</p>
+		<p>Join our growing community of Trainers</p>
 		<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">
 		
     		<h3>Log In Trainer</h3>
@@ -92,8 +92,10 @@
 			<br>
             <input class="input" class="button" type="submit" value="Submit New Trainer"/>
 	</form:form>
+	<a href="/user"> Not a trainer? Click here</a>
 	</div>
 </section>
+
 
 
 </body>
