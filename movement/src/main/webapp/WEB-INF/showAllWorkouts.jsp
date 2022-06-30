@@ -35,8 +35,11 @@
 	            </c:forEach>
 	        </table>
 	    </div>
-	    <a href="/user/home">Your Workouts</a>
-	    <a href="/user/logout">Logout</a>
+	    <div style="display: flex; flex-direction: column;">
+		    <a href="/user/home">Your Workouts</a>
+		    <a href="/user/logout">Logout</a>
+	    
+	    </div>
 	</div>
 </body>
 </html>
