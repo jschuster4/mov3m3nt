@@ -9,6 +9,6 @@ public class MovementApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MovementApplication.class, args);
 	}
-//	test
+
 
 }

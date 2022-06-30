@@ -28,8 +28,8 @@
                     <td><a href="/workout/${workout.id}">${workout.title}</a></td>
                     <td>${workout.target}</td>
                     <td><a href="/user/viewInstructor/${workout.trainer.id}">${workout.trainer.firstName}</a></td>
-<%--                     <td>${workout.likes}</td>
- --%>                </tr>
+                    <td>${workout.getUserLikes()}</td>
+                 </tr>
             </c:forEach>
         </table>
     </div>

@@ -1,5 +1,7 @@
 package com.codingdojo.movement.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -15,21 +17,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.codingdojo.movement.models.Trainer;
+import com.codingdojo.movement.models.User;
 import com.codingdojo.movement.models.Workout;
 import com.codingdojo.movement.services.TrainerService;
+import com.codingdojo.movement.services.UserService;
 import com.codingdojo.movement.services.WorkoutService;
 
 @Controller
 @RequestMapping("/workout")
 public class WorkoutController {
     
-//    public WorkoutController(){};
+    public WorkoutController(){};
 
     @Autowired
     private WorkoutService workoutService;
     
     @Autowired 
     private TrainerService trainerService;
+    
+    @Autowired 
+    private UserService userService;
     
 //    add a new workout page 
 
@@ -62,6 +69,21 @@ public class WorkoutController {
         }
         model.addAttribute("workout", workoutService.findAll() );
         return "showAllWorkouts";
+    }
+    
+    @GetMapping("/likeWorkout/{id}")
+    public String likeWorkout(@PathVariable("id") Long id, Model model, HttpSession session) {
+    	Workout workout = workoutService.findById(id);
+    	User user = (User) session.getAttribute("user");
+    	List <User> UserList = workout.getUsers();
+    	List <Workout> WorkoutList = user.getWorkouts();
+    	UserList.add(user);
+    	WorkoutList.add(workout);
+    	user.setWorkouts(WorkoutList);
+    	workout.setUsers(UserList);
+    	workoutService.updateWorkout(workout);
+    	userService.updateUser(user);
+    	return "redirect:/workout/showAll";
     }
 
     @GetMapping("/edit/{id}")
@@ -108,6 +130,14 @@ public class WorkoutController {
         model.addAttribute("workout", workoutService.findById(id));
         return "showOneWorkout";
     }
+
+	public TrainerService getTrainerService() {
+		return trainerService;
+	}
+
+	public void setTrainerService(TrainerService trainerService) {
+		this.trainerService = trainerService;
+	}
     
     
 }
