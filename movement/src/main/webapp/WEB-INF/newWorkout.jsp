@@ -36,6 +36,10 @@
                 <option value="advanced">Advanced</option>
             </form:select>
             
+            <form:label path="playlistId">Playlist</form:label>
+            <form:errors path="playlistId"></form:errors>
+            <form:input type="text" path="playlistId"></form:input>
+            
             <form:input type="hidden" path="trainer" value="${sessionTrainer.id}"></form:input>
             
             <input type="submit" value="Create New Workout" />

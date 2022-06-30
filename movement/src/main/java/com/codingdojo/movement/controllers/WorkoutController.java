@@ -55,6 +55,10 @@ public class WorkoutController {
             model.addAttribute("addWorkout", new Workout());
             return "newWorkout";
         }
+        if (SpotifyController.getPlaylist(workout.getPlaylistId()) == null) {
+        	res.rejectValue("playlistId","Playlist_error","Playlist NOT FOUND");
+        	return "newWorkout";
+        }
         workoutService.create(workout);
         String returnStatement = String.format("redirect:/trainer/home/%s", trainer_id);
         return returnStatement; 
@@ -129,7 +133,9 @@ public class WorkoutController {
 
     @GetMapping("/{id}")
     public String showOneWorkout(@PathVariable("id") Long id, Model model, HttpSession session){
-        model.addAttribute("workout", workoutService.findById(id));
+    	Workout workout = workoutService.findById(id);
+        model.addAttribute("workout", workout);
+        model.addAttribute("playlist", SpotifyController.getPlaylist(workout.getPlaylistId()));
         return "showOneWorkout";
     }
 
