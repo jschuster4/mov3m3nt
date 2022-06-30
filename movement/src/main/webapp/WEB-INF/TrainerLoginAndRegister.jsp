@@ -7,7 +7,9 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script defer type="text/javascript" src="/js/main.js"></script>
     <title>Login And Registration</title>
+<%--    <script type="text/javascript" src="/js/main.js"></script>--%>
 </head>
 <body>
 
@@ -45,7 +47,8 @@
     </table>
 </form:form>
 
-<form:form action="/trainer/register" method="post" modelAttribute="newTrainer">
+
+<form:form action="/trainer/register" method="post" modelAttribute="newTrainer" enctype="multipart/form-data">
 
     <table>
         <thead>
@@ -54,6 +57,13 @@
         </tr>
         </thead>
         <thead>
+        <tr>
+            <td>
+
+               <input id="avatar" type="file" name="file">
+                <form:errors path="avatar"></form:errors>
+            </td>
+        </tr>
         <tr>
             <td class="float-left">First Name</td>
             <td class="float-left">
