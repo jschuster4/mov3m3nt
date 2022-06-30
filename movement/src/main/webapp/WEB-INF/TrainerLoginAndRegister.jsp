@@ -14,6 +14,9 @@
 </head>
 <body>
 
+<video autoplay muted loop id="myVideo">
+		<source src="/videos/ropes.mp4.mp4" type="video/mp4">
+</video>
 
 <section class="vh-100 gradient-custom">
 	<div class="container mt-5">
@@ -34,7 +37,7 @@
 					<form:errors path="password" class="text-danger" />
 				</div>
 				<br>
-            	<input class="input" class="button" type="submit" value="Login Trainer"/>
+            	<input class="btn btn-primary" type="submit" value="Login Trainer"/>
 	</form:form>
 	
 	<form:form action="/trainer/register" method="post" modelAttribute="newTrainer">
@@ -88,7 +91,7 @@
 				<form:errors path="confirm" class="text-danger" />
 			</div>
 			<br>
-            <input class="input" class="button" type="submit" value="Submit New Trainer"/>
+            <input class="btn btn-primary" type="submit" value="Submit New Trainer"/>
 	</form:form>
 	</div>
 </section>

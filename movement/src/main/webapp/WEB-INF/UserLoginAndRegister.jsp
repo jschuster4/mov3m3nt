@@ -17,8 +17,7 @@
 <video autoplay muted loop id="myVideo">
 		<source src="/videos/explore.mp4" type="video/mp4">
 </video>
-<h1>Welcome!</h1>
-<p>Join our growing community.</p>
+
 
 	<div class="container mt-5">
 		<h1>Welcome!</h1>
