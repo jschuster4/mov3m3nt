@@ -60,82 +60,86 @@
 
 .container
 {
-	width:70%;
-	margin:0 auto;
+    width:70%;
+    margin:0 auto;
 }
 
 .card
 {
-	border:1px solid #e4e2e0;
-	display:grid;
-	grid-template-columns:1fr;
-	background-color:#fff;
+    border:1px solid #e4e2e0;
+    display:grid;
+    grid-template-columns:1fr;
+    background-color:#fff;
 }
 
 .card_head
 {
-	background-color:#3498db;
-	padding:1rem;
-	border-bottom:1px solid #e4e2e0;
-	color:#fff;
+    background-color:#3498db;
+    padding:1rem;
+    border-bottom:1px solid #e4e2e0;
+    color:#fff;
 }
 
 .card_body
 {
-	padding:2rem;
-	display:grid;
-	gap:2rem;
+    padding:2rem;
+    display:grid;
+    gap:2rem;
 }
 
 .btn_submit
 {
-	background-color:#3498db;
-	color:#fff;
+    background-color:#3498db;
+    color:#fff;
 }
 
 .btn_submit:hover
 {
-	cursor:pointer;
-	background-color:#2ecc71;
+    cursor:pointer;
+    background-color:#2ecc71;
 }
 
 input
 {
-	padding:1rem;
-	background-color:#faf9f8;
-	border:1px solid #e4e2e0;
+    padding:1rem;
+    background-color:#faf9f8;
+    border:1px solid #e4e2e0;
 }
 
 textarea
 {
-	padding:1rem;
-	background-color:#faf9f8;	
-	border:1px solid #e4e2e0;
-	resize:none;
+    padding:1rem;
+    background-color:#faf9f8;
+    border:1px solid #e4e2e0;
+    resize:none;
 }
 
 table
 {
-	border:1px solid #e4e2e0;
-	background-color:#fff;
-	border-collapse:collapse;
+    border:1px solid #e4e2e0;
+    background-color:#fff;
+    border-collapse:collapse;
 }
 
 tr
 {
-	padding:1rem;
+    padding:1rem;
 }
 
 th
 {
-	background-color:#3498db;
-	border:1px solid #e4e2e0;
-	padding:1rem;
-	color:#fff;
+    background-color:#3498db;
+    border:1px solid #e4e2e0;
+    padding:1rem;
+    color:#fff;
 }
 
 td
 {
+
+    padding:1rem;
+    border:1px solid #e4e2e0;
+
 	padding:1rem;
 	border:1px solid #e4e2e0;
 }
@@ -148,5 +152,4 @@ td
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
-
 }

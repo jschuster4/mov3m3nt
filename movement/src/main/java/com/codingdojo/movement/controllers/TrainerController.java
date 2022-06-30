@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.*;
 
 import com.codingdojo.movement.models.LoginTrainer;
 import com.codingdojo.movement.models.Trainer;
 import com.codingdojo.movement.services.TrainerService;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.util.List;
 
 
 @Controller
@@ -57,11 +57,23 @@ public class TrainerController {
     }
     
     @PostMapping("/register")
-    public String registerTrainer(@Valid @ModelAttribute("newTrainer") Trainer trainer, BindingResult res, Model model) {
+    public String registerTrainer(@Valid @ModelAttribute("newTrainer") Trainer trainer, BindingResult res, Model model, @RequestParam ("file")MultipartFile file) {
 		if(res.hasErrors()) {
 //			model.addAttribute("newTrainer", new Trainer());
 	    	model.addAttribute("trainerLogin", new LoginTrainer());
 			return "TrainerLoginAndRegister";
+		}
+		if(trainer.getAvatar()==null||trainer.getAvatar().length()<1)
+		{
+			res.rejectValue("avatar","avatar_required","Avatar is required.");
+			return "TrainerLoginAndRegister";
+		}
+		String fileName = file.getOriginalFilename();
+		try{
+			file.transferTo(new File("/Users/mendygiter/Documents/GitHub/mov3m3nt/movement/src/main/resources/static/images/" + file.getOriginalFilename()));
+		}
+		catch (Exception e) {
+			System.out.println(e);
 		}
 		Trainer dbTrainer= trainerService.create(trainer, res);
 		if(dbTrainer == null) {
@@ -69,10 +81,10 @@ public class TrainerController {
 	    	model.addAttribute("trainerLogin", new LoginTrainer());
 			return "TrainerLoginAndRegister";
 		}
-		
 		return "redirect:/trainer";
 	}
-	
+
+
 	@PostMapping("/login")
 	public String login(@Valid @ModelAttribute("trainerLogin") LoginTrainer loginTrainer, BindingResult res, Model model, HttpSession session) {
 	
