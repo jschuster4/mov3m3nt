@@ -63,12 +63,14 @@ public class TrainerController {
 	    	model.addAttribute("trainerLogin", new LoginTrainer());
 			return "TrainerLoginAndRegister";
 		}
-		if(trainer.getAvatar()==null||trainer.getAvatar().length()<1)
-		{
-			res.rejectValue("avatar","avatar_required","Avatar is required.");
-			return "TrainerLoginAndRegister";
-		}
 		String fileName = file.getOriginalFilename();
+//		if(file == null);
+//		{
+//			res.rejectValue("avatar","avatar_required","Avatar is required.");
+//			model.addAttribute("trainerLogin", new LoginTrainer());
+//			return "TrainerLoginAndRegister";
+//		}
+//		String fileName = file.getOriginalFilename();
 		try{
 			file.transferTo(new File("/Users/mendygiter/Documents/GitHub/mov3m3nt/movement/src/main/resources/static/images/" + file.getOriginalFilename()));
 		}
