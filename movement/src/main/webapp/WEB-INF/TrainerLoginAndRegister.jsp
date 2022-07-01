@@ -18,83 +18,6 @@
 <video autoplay muted loop id="myVideo">
 		<source src="/videos/explore.mp4" type="video/mp4">
 </video>
-
-<%--<h1>MOV3M3NT</h1>--%>
-<%--<p>Join our growing community.</p>--%>
-
-
-<%--<form:form action="/trainer/login" method="post" modelAttribute="trainerLogin">--%>
-
-<%--    <table>--%>
-<%--        <thead>--%>
-<%--        <tr>--%>
-<%--            <td colspan="2">Log In Trainer</td>--%>
-<%--        </tr>--%>
-<%--        </thead>--%>
-<%--        <thead>--%>
-<%--        <tr>--%>
-<%--            <td class="float-left">Email:</td>--%>
-<%--            <td class="float-left">--%>
-<%--                <form:errors path="email" class="text-danger"></form:errors>--%>
-<%--                <form:input class="input" path="email"></form:input>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td class="float-left">Password:</td>--%>
-<%--            <td class="float-left">--%>
-<%--                <form:errors path="password" class="text-danger"></form:errors>--%>
-<%--                <form:input class="input" path="password"></form:input>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td colspan=2><input class="input" class="button" type="submit" value="Login Trainer"/></td>--%>
-<%--        </tr>--%>
-<%--        </thead>--%>
-<%--    </table>--%>
-<%--</form:form>--%>
-
-
-<%--<form:form action="/trainer/register" method="post" modelAttribute="newTrainer" enctype="multipart/form-data">--%>
-
-<%--    <table>--%>
-<%--        <thead>--%>
-<%--        <tr>--%>
-<%--            <td colspan="2">Register as a Trainer</td>--%>
-<%--        </tr>--%>
-<%--        </thead>--%>
-<%--        <thead>--%>
-<%--        <tr>--%>
-<%--            <td>--%>
-
-<%--               <input id="avatar" type="file" name="file">--%>
-<%--                <form:errors path="avatar"></form:errors>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td class="float-left">First Name</td>--%>
-<%--            <td class="float-left">--%>
-<%--                <form:errors path="firstName" class="text-danger"></form:errors>--%>
-<%--                <form:input type="text" class="input" path="FirstName"></form:input>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td class="float-left">Last Name:</td>--%>
-<%--            <td class="float-left">--%>
-<%--                <form:errors path="lastName" class="text-danger"></form:errors>--%>
-<%--                <form:input type="text" class="input" path="lastName"></form:input>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td class="float-left">Email:</td>--%>
-<%--            <td class="float-left">--%>
-<%--                <form:errors path="email" class="text-danger"></form:errors>--%>
-<%--                <form:input type="text" class="input" path="email"></form:input>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td class="float-left">Location:</td>--%>
-<%--            <td class="float-left">--%>
-
 <section class="vh-100 gradient-custom">
 	<div class="container mt-5">
 		<h1>MOV3M3NT</h1>
@@ -114,7 +37,7 @@
 					<form:errors path="password" class="text-danger" ></form:errors>
 				</div>
 				<br>
-            	<input class="input" class="button" type="submit" value="Login Trainer"/>
+            	<input class="btn btn-primary" type="submit" value="Login Trainer"/>
 	</form:form>
 	
 	<form:form action="/trainer/register" method="post" modelAttribute="newTrainer" enctype="multipart/form-data">
@@ -174,7 +97,7 @@
 				<form:errors path="confirm" class="text-danger"></form:errors>
 			</div>
 			<br>
-            <input class="input" class="button" type="submit" value="Submit New Trainer"/>
+            <input class="btn btn-primary" type="submit" value="Submit New Trainer"/>
 	</form:form>
 	<a href="/user"> Not a trainer? Click here</a>
 	</div>

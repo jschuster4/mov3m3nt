@@ -29,8 +29,8 @@ public class Workout {
     @NotEmpty(message= "A selection from the dropdown is required!")
     private String difficulty;
     
-    @NotEmpty(message= "Playlist is required")
-    private String playlistId;
+//    @NotEmpty(message= "Playlist is required")
+//    private String playlistId;
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="trainer_id")
@@ -52,13 +52,13 @@ public class Workout {
    
    
     
-    public String getPlaylistId() {
-		return playlistId;
-	}
-
-	public void setPlaylistId(String playlistId) {
-		this.playlistId = playlistId;
-	}
+//    public String getPlaylistId() {
+//		return playlistId;
+//	}
+//
+//	public void setPlaylistId(String playlistId) {
+//		this.playlistId = playlistId;
+//	}
 
 	public void setId(Long id) {
         this.id = id;
