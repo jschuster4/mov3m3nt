@@ -17,6 +17,10 @@
 <video autoplay muted loop id="myVideo">
 		<source src="/videos/explore.mp4" type="video/mp4">
 </video>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2a23626e8e4b806f284bb7239c974fbba0152f03
 
 	<div class="container mt-5">
 		<h1>Welcome to the MOV3M3NT!</h1>
